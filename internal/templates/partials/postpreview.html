@@ -1,10 +1,5 @@
 {{ define "postpreview" }}
 <h1>Blog Posts</h1>
-<div>
-	{{ range .PageNumbers }}
-	<a href="/?page={{ . }}">{{ . }}</a>
-	{{ end }}
-</div>
 <ul>
 	{{ range .Posts }}
 	<li>

@@ -25,6 +25,7 @@ func LoadPageRoutes(router chi.Router, posts []handlers.Post, categories []strin
 	router.Get("/about", pageHandler.About)
 	router.Get("/faq", pageHandler.FAQ)
 	router.Get("/postpreview", pageHandler.PostPreview)
+	router.Get("/posts", pageHandler.PostList)
 	router.Get("/postcategorylist", pageHandler.CategoryList)
 	router.Get("/posts/{slug}", pageHandler.ViewPost)
 }
