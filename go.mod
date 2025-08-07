@@ -10,8 +10,5 @@ require (
 
 require (
 	github.com/BurntSushi/toml v0.3.1 // indirect
-	github.com/jinzhu/inflection v1.0.0 // indirect
-	github.com/jinzhu/now v1.1.5 // indirect
-	golang.org/x/text v0.20.0 // indirect
 	gopkg.in/yaml.v2 v2.3.0 // indirect
 )

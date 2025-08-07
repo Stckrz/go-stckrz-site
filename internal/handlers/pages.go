@@ -8,11 +8,9 @@ import (
 	"sort"
 	"strconv"
 
-	"gorm.io/gorm"
 )
 
 type PageHandler struct {
-	DB         *gorm.DB
 	Posts      []Post
 	Categories []string
 }
