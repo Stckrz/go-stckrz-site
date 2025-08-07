@@ -6,7 +6,6 @@ import (
 	"log"
 
 	application "github.com/stckrz/go-stckrz-site/internal/app"
-	// "github.com/stckrz/go-stckrz-site/internal/handlers"
 )
 
 

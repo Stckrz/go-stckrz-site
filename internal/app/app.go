@@ -6,22 +6,15 @@ import (
 	"log"
 	"net/http"
 
-	"github.com/stckrz/go-stckrz-site/internal/db"
 	"github.com/stckrz/go-stckrz-site/internal/handlers"
 	"github.com/stckrz/go-stckrz-site/internal/routes"
-	"gorm.io/gorm"
 )
 
 type App struct {
 	router http.Handler
-	db *gorm.DB
 }
 
 func New() (*App, error){
-	database, err := db.ConnectDB();
-	if err != nil {
-		return nil, fmt.Errorf("Failed to connect to database: %w", err)
-	}
 
 	posts, err := handlers.LoadPosts()
 	if err != nil {
@@ -33,8 +26,7 @@ func New() (*App, error){
 	}
 
 	app := &App{
-		router: routes.LoadRoutes(database, posts, categories),
-		db: database,
+		router: routes.LoadRoutes(posts, categories),
 	}
 	return app, nil
 
