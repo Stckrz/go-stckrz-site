@@ -21,7 +21,6 @@ func (h *PageHandler) renderTemplate(w http.ResponseWriter, tmpl string, data an
 	t, err := template.ParseFiles(
 		"internal/templates/layout.html",
 		"internal/templates/navbar.html",
-		"internal/templates/partials/addsong.html",
 		"internal/templates/partials/postpreview.html",
 		"internal/templates/partials/postcategorylist.html",
 		filepath.Join("internal/templates", tmpl+".html"),
