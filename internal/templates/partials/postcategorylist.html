@@ -1,0 +1,16 @@
+{{ define "postcategorylist" }}
+  <h1>Categories</h1>
+  <ul>
+    <li>
+      <a href="/" class="{{ if not .SelectedTag }}active{{ end }}">All</a>
+    </li>
+  {{ range .Categories }}
+    <li>
+      <a href="/?tag={{ . }}"
+         class="{{ if eq $.SelectedTag . }}active{{ end }}">
+        {{ . }}
+      </a>
+    </li>
+  {{ end }}
+  </ul>
+{{ end }}

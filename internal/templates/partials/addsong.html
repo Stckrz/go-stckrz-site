@@ -1,0 +1,11 @@
+{{ define "addsong" }}
+<h1>Add Song: </h1>
+<form action="/addsong" method="POST">
+	<input name="filename" placeholder="File Name" required>
+	<input name="title" placeholder="Title" required>
+	<input name="artist" placeholder="Artist" required>
+	<input name="album" placeholder="Album" required>
+	<button type="submit">add song</button>
+</form>
+
+{{ end }}

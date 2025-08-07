@@ -1,0 +1,61 @@
+:root{
+	--main-bg-color: #1c1c1c;
+	--main-text-color: #f5e8d8;
+	--accent1: #FF6F61;
+	--accent2: #DAA520;
+	--hover: #FF4500;
+}
+html, body{
+	display: flex;
+	height: 100vh;
+	width: 100vw;
+	margin: 0;
+
+}
+main{
+	width: 100%;
+}
+html{
+	background-color: var(--main-bg-color);
+	color: var(--main-text-color);
+	height: 100%;
+}
+
+a {
+	color: var(--accent2)
+}
+
+a:visited{
+	color: var(--accent2);
+}
+
+h1{
+	color: var(--accent1);
+}
+
+nav{
+	display: flex;
+	flex-direction: column;
+	height: 100%;
+	width: 10%;
+	background-color: #1c2c2c;
+}
+.nav-link{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 10px;
+	text-decoration: none;
+}
+
+form{
+	display: flex;
+	flex-direction: column;
+}
+
+.main-content{
+	display: flex;
+	flex-grow: 1;
+	flex-direction: column;
+	padding: 10px;
+}

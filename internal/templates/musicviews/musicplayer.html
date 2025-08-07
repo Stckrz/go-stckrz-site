@@ -1,0 +1,10 @@
+{{ define "content" }}
+<h1>{{ .Title }}</h1>
+
+
+<audio controls>
+	<source src="/media/{{ .FileName }}" type="audio/wav">
+	Your browser does not support the audio element.
+</audio>
+
+{{ end }}

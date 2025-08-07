@@ -1,0 +1,19 @@
+{{ define "postpreview" }}
+<h1>Blog Posts</h1>
+<div>
+	{{ range .PageNumbers }}
+	<a href="/?page={{ . }}">{{ . }}</a>
+	{{ end }}
+</div>
+<ul>
+	{{ range .Posts }}
+	<li>
+        <a href="/posts/{{ .Slug }}">{{ .Title }}</a>
+		<p>{{ .Date.Format "Jan 02, 2006" }}</p>
+		<p>{{ .Content }}</p>
+	</li>
+	{{ else }}
+		<li>No blog posts found..</li>
+	{{ end }}
+</ul>
+{{ end }}
