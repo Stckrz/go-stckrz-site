@@ -1,8 +1,26 @@
 {{ define "content" }}
-<h1>Home Page</h1>
-<p>
-	Hello! Welcome to my little homepage, one of my corners of the internet! This is mostly meant to be a blog for me to talk about things I'm passionate about, as well as maybe a place to collect buttons, be a part of webrings, etc..
-</p>
-{{ template "postpreview" . }}
+<div class="index-wrapper">
+	<h1>Home Page</h1>
+		<ul>
+			<li>
+				<a href="https://github.com/Stckrz">Github</a>
+			</li>
+			<li>
+				<a href="https://www.linkedin.com/in/madison-sage-5a45692b7">Linkedin</a>
+			</li>
+			<li>
+				<a href="mailto:mail@stckrz.com">Email</a>
+			</li>
+		</ul>
+	<p>
+		Hello! Welcome to my little homepage, one of my corners of the internet! This is mostly meant to be a blog for me to talk about things I'm passionate about, as well as maybe a place to collect buttons, be a part of webrings, etc..
+	</p>
+	{{ template "postpreview" . }}
+	<div class="button-container">
+		<a href="https://iframe.chat/"><img src="https://iframe.chat/chattable-alt.gif" title="Add a stream chat to your website free with Chattable" alt="Chattable" /></a>
+	<!--strawbebby's button 88x31--><a href='https://strawbebby228.neocities.org/' target='_blank'><img src='https://strawbebby228.neocities.org/arts/UI/ButtonPink.gif'></a>
+	<!-- <a href="https://transring.neocities.org" target="_top"><img src="https://transring.neocities.org/widget/trans/button.png" alt="transing the internet"></a> -->
+	</div>
+<div>
 {{ end }}
 

@@ -1,3 +1,7 @@
+/* make padding & border count _inside_ width/height */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
 :root{
 	--main-bg-color: #1c1c1c;
 	--main-text-color: #f5e8d8;
@@ -60,6 +64,7 @@ form{
 	display: flex;
 	flex-grow: 1;
 	flex-direction: column;
+	height: 100%;
 	padding: 10px;
 }
 
@@ -88,5 +93,15 @@ form{
 }
 .post-list-pagination-container{
 	width: 100%;
+}
+.button-container {
+	display: flex;
+	justify-self: flex-end;
+	margin-top: auto;
+}
+.index-wrapper{
+	display: flex;
+	flex-direction: column;
+	height: 100%;
 }
 
