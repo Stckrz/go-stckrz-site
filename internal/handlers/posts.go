@@ -2,38 +2,40 @@ package handlers
 
 import (
 	"bytes"
-	"fmt"
 	"html/template"
 	"net/http"
 	"os"
 	"path/filepath"
 	"sort"
-	"strconv"
 	"strings"
 	"time"
 
 	"github.com/adrg/frontmatter"
 	"github.com/go-chi/chi/v5"
 	"github.com/gomarkdown/markdown"
+	"github.com/stckrz/go-stckrz-site/internal/pagination"
 )
 
 type metadata struct {
-	Title string `yaml:"title"`
-	Date  string `yaml:"date"`
-	Slug  string `yaml:"slug"`
-	Tag   string `yaml:"tag"`
+	Title   string `yaml:"title"`
+	Date    string `yaml:"date"`
+	Slug    string `yaml:"slug"`
+	Tag     string `yaml:"tag"`
+	Summary string `yaml:"summary"`
 }
+
 type Post struct {
 	Title   string
 	Date    time.Time
 	Slug    string
 	Tag     string
+	Summary string
 	Content template.HTML
 }
 
 func (h *PageHandler) PostPreview(w http.ResponseWriter, r *http.Request) {
 	h.renderTemplate(w, "partials/postpreview", map[string]any{
-		"Title":     "My Blog Posts",
+		"Title": "My Blog Posts",
 		"Posts": h.Posts,
 	})
 }
@@ -41,19 +43,9 @@ func (h *PageHandler) PostPreview(w http.ResponseWriter, r *http.Request) {
 func (h *PageHandler) PostList(w http.ResponseWriter, r *http.Request) {
 	selectedTag := r.URL.Query().Get("tag")
 	currentPage := r.URL.Query().Get("page")
-	fmt.Println(selectedTag)
+	pageSize := 5
+
 	posts := h.Posts
-	if currentPage == "" {
-		currentPage = "1"
-	}
-
-	
-
-	parsedPage, err := strconv.Atoi(currentPage)
-	if err != nil {
-		fmt.Println("could not parse page")
-		return
-	}
 	if selectedTag != "" {
 		filtered := make([]Post, 0, len(posts))
 		for _, post := range posts {
@@ -69,35 +61,16 @@ func (h *PageHandler) PostList(w http.ResponseWriter, r *http.Request) {
 		return posts[i].Date.After(posts[j].Date)
 	})
 
-	//Pagination information 2
-	skip := 2
-
-
-	totalPages := (len(posts) + skip - 1) / skip
-	pageNumbers := make([]int, totalPages)
-	for i := range pageNumbers {
-		pageNumbers[i] = i + 1
-	}
-
-	start := (parsedPage - 1) * skip
-	end :=parsedPage * skip
-	if start >= len(posts) {
-		start = len(posts)
-	}
-	if end > len(posts) {
-		end = len(posts)
-	}
-
-	pagedPosts := posts[start:end]
+	pagination := pagination.Paginate(posts, currentPage, pageSize)
 
 	h.renderTemplate(w, "postlist", map[string]any{
-		"Title":     "Post List",
-		"Posts": pagedPosts,
+		"Title":       "Post List",
+		"Posts":       pagination.Items,
 		"Categories":  h.Categories,
 		"SelectedTag": selectedTag,
-		"CurrentPage": parsedPage,
-		"TotalPages": totalPages,
-		"PageNumbers": pageNumbers,
+		"CurrentPage": pagination.CurrentPage,
+		"TotalPages":  pagination.TotalPages,
+		"PageNumbers": pagination.PageNumbers,
 	})
 }
 
@@ -172,6 +145,7 @@ func LoadPosts() ([]Post, error) {
 			Date:    parsedDate,
 			Slug:    meta.Slug,
 			Tag:     meta.Tag,
+			Summary: meta.Summary,
 			Content: template.HTML(html),
 		})
 	}

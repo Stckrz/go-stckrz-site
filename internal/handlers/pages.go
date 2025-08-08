@@ -4,6 +4,7 @@ import (
 	"html/template"
 	"net/http"
 	"path/filepath"
+	"sort"
 )
 
 type PageHandler struct {
@@ -30,12 +31,17 @@ func (h *PageHandler) renderTemplate(w http.ResponseWriter, tmpl string, data an
 
 func (h *PageHandler) Index(w http.ResponseWriter, r *http.Request) {
 	posts := h.Posts
+
+	//Logic to date the posts newest first
+	sort.Slice(posts, func(i, j int) bool {
+		return posts[i].Date.After(posts[j].Date)
+	})
 	pagedPosts := posts[0:4]
 
 	h.renderTemplate(w, "index", map[string]any{
-		"Title":       "Home",
-		"Posts":       pagedPosts,
-		"Categories":  h.Categories,
+		"Title":      "Home",
+		"Posts":      pagedPosts,
+		"Categories": h.Categories,
 	})
 }
 

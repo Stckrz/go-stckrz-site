@@ -3,6 +3,7 @@ title:  "Dev Update"
 date:   "2025-08-08"
 slug:   "dev-update"
 tag:    "regular-posts"
+summary: "Some thoughts about early development and deployment"
 ---
 
 Still kind of figuring out exactly how I want this whole thing to work.. I think I want to kind of strike a balance between a more modern aesthetic, while still maintaining some of the themes of indie-web and older websites.. This means having a more modern, sleeker design. This also means having things like webring links, buttons, and other fun things.. Maybe even a webgarden or something.
