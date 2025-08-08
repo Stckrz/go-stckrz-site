@@ -1,21 +1,23 @@
 {{ define "content" }}
 <h1>Posts</h1>
 
-{{ template "postcategorylist" . }}
-<div>
+<div class="post-list-container">
+	{{ template "postcategorylist" . }}
+	<ul>
+		{{ range .Posts }}
+		<li class="post-list-post">
+			<a href="/posts/{{ .Slug }}">{{ .Title }}</a>
+			<p>{{ .Date.Format "Jan 02, 2006" }}</p>
+			<p>{{ .Content }}</p>
+		</li>
+		{{ else }}
+			<li>No blog posts found..</li>
+		{{ end }}
+	</ul>
+</div>
+<div class="post-list-pagination-container">
 	{{ range .PageNumbers }}
 	<a href="/posts?page={{ . }}">{{ . }}</a>
 	{{ end }}
 </div>
-<ul>
-	{{ range .Posts }}
-	<li>
-        <a href="/posts/{{ .Slug }}">{{ .Title }}</a>
-		<p>{{ .Date.Format "Jan 02, 2006" }}</p>
-		<p>{{ .Content }}</p>
-	</li>
-	{{ else }}
-		<li>No blog posts found..</li>
-	{{ end }}
-</ul>
 {{ end }}

@@ -5,6 +5,7 @@
 	--accent2: #DAA520;
 	--hover: #FF4500;
 }
+
 html, body{
 	display: flex;
 	height: 100vh;
@@ -15,6 +16,7 @@ html, body{
 main{
 	width: 100%;
 }
+
 html{
 	background-color: var(--main-bg-color);
 	color: var(--main-text-color);
@@ -40,6 +42,7 @@ nav{
 	width: 10%;
 	background-color: #1c2c2c;
 }
+
 .nav-link{
 	display: flex;
 	align-items: center;
@@ -59,3 +62,31 @@ form{
 	flex-direction: column;
 	padding: 10px;
 }
+
+.post-preview-container{
+	border: 1px solid var(--accent2);
+	width: 50%;
+}
+
+.post-preview{
+	text-decoration: none;
+	list-style: none;
+	display: flex;
+	align-items: center;
+	justify-content: flex-start;
+	gap: 10px;
+}
+.post-preview p{
+	margin: 2px;
+}
+.post-list-container {
+	display: flex;
+	width: 100%;
+}
+.post-list-post{
+	list-style: none;
+}
+.post-list-pagination-container{
+	width: 100%;
+}
+
