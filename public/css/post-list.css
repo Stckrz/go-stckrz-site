@@ -1,0 +1,24 @@
+.post-list-page-container {
+	display: flex;
+	justify-content: space-evenly;
+	width: 100%;
+}
+
+.post-list-container {
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+}
+
+.post-list {
+	margin: 0px;
+	padding: 10px;
+	border: 1px solid var(--accent2);
+	width: 50%;
+}
+
+.post-list-pagination-container {
+	display: flex;
+	justify-content: flex-end;
+	width: 50%;
+}

@@ -1,13 +1,10 @@
+@import url("post-list.css");
+@import url("index.css");
+@import url("variables.css");
+
 /* make padding & border count _inside_ width/height */
 *, *::before, *::after {
   box-sizing: border-box;
-}
-:root{
-	--main-bg-color: #1c1c1c;
-	--main-text-color: #f5e8d8;
-	--accent1: #FF6F61;
-	--accent2: #DAA520;
-	--hover: #FF4500;
 }
 
 html, body{
@@ -47,11 +44,15 @@ nav{
 	background-color: #1c2c2c;
 }
 
+ul{
+	list-style: none;
+}
+
 .nav-link{
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	padding: 10px;
+	padding: var(--big-space);
 	text-decoration: none;
 }
 
@@ -60,6 +61,7 @@ form{
 	flex-direction: column;
 }
 
+/* General */
 .main-content{
 	display: flex;
 	flex-grow: 1;
@@ -68,40 +70,14 @@ form{
 	padding: 10px;
 }
 
-.post-preview-container{
-	border: 1px solid var(--accent2);
-	width: 50%;
-}
-
-.post-preview{
-	text-decoration: none;
-	list-style: none;
-	display: flex;
-	align-items: center;
-	justify-content: flex-start;
-	gap: 10px;
-}
-.post-preview p{
-	margin: 2px;
-}
-.post-list-container {
-	display: flex;
+/* Generic Classes*/
+.full-size{
 	width: 100%;
-}
-.post-list-post{
-	list-style: none;
-}
-.post-list-pagination-container{
-	width: 100%;
-}
-.button-container {
-	display: flex;
-	justify-self: flex-end;
-	margin-top: auto;
-}
-.index-wrapper{
-	display: flex;
-	flex-direction: column;
 	height: 100%;
 }
 
+.flex-center {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}

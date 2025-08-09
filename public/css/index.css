@@ -1,0 +1,40 @@
+/*  Index Page Stuff */
+
+.index-wrapper{
+	display: flex;
+	flex-direction: column;
+	height: 100%;
+}
+
+/*  "Buttons" container */
+.button-container {
+	display: flex;
+	justify-self: flex-end;
+	margin-top: auto;
+	gap: 5px;
+}
+
+/*Social Media Links*/
+.socials-list{
+	display: flex;
+	flex-direction: column;
+}
+
+/*  Post Preview Block */
+.post-preview-container{
+	border: 1px solid var(--accent2);
+	width: 50%;
+}
+
+.post-preview{
+	text-decoration: none;
+	list-style: none;
+	display: flex;
+	align-items: center;
+	justify-content: flex-start;
+	gap: 10px;
+}
+
+.post-preview p{
+	margin: 2px;
+}
