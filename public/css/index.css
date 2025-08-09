@@ -4,6 +4,8 @@
 	display: flex;
 	flex-direction: column;
 	height: 100%;
+	width: 80%;
+	align-self: center;
 }
 
 /*  "Buttons" container */
@@ -17,12 +19,16 @@
 /*Social Media Links*/
 .socials-list{
 	display: flex;
-	flex-direction: column;
+	justify-content: flex-end;
+	margin-left: 10%;
+	margin-right: 10%;
+	margin-top: 0px;
+	gap: 10px;
+	/* flex-direction: column; */
 }
 
 /*  Post Preview Block */
 .post-preview-container{
-	border: 1px solid var(--accent2);
 	width: 50%;
 }
 

@@ -7,18 +7,24 @@
 .post-list-container {
 	display: flex;
 	flex-direction: column;
+	align-items: center;
 	width: 100%;
 }
 
 .post-list {
 	margin: 0px;
 	padding: 10px;
-	border: 1px solid var(--accent2);
-	width: 50%;
+	width: 80%;
 }
 
 .post-list-pagination-container {
 	display: flex;
 	justify-content: flex-end;
 	width: 50%;
+}
+
+.post-category-list{
+	display: flex;
+	gap: 10px;
+	text-decoration: none;
 }

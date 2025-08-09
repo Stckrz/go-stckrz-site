@@ -5,6 +5,7 @@ import (
 	"net/http"
 	"path/filepath"
 	"sort"
+
 )
 
 type PageHandler struct {
@@ -18,6 +19,7 @@ func (h *PageHandler) renderTemplate(w http.ResponseWriter, tmpl string, data an
 		"internal/templates/navbar.html",
 		"internal/templates/partials/postpreview.html",
 		"internal/templates/partials/postcategorylist.html",
+		"internal/templates/partials/guestbookform.html",
 		filepath.Join("internal/templates", tmpl+".html"),
 	)
 
@@ -46,7 +48,9 @@ func (h *PageHandler) Index(w http.ResponseWriter, r *http.Request) {
 }
 
 func (h *PageHandler) About(w http.ResponseWriter, r *http.Request) {
-	h.renderTemplate(w, "about", map[string]string{"Title": "About"})
+	h.renderTemplate(w, "about", map[string]string{
+		"Title": "About",
+	})
 }
 
 func (h *PageHandler) FAQ(w http.ResponseWriter, r *http.Request) {

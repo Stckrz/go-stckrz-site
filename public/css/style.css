@@ -1,6 +1,7 @@
 @import url("post-list.css");
 @import url("index.css");
 @import url("variables.css");
+@import url("guestbook.css");
 
 /* make padding & border count _inside_ width/height */
 *, *::before, *::after {
@@ -9,13 +10,15 @@
 
 html, body{
 	display: flex;
+	flex-direction: column;
 	height: 100vh;
 	width: 100vw;
 	margin: 0;
-
 }
+
 main{
 	width: 100%;
+	height: 100%;
 }
 
 html{
@@ -34,14 +37,17 @@ a:visited{
 
 h1{
 	color: var(--accent1);
+	margin: 0px;
 }
 
 nav{
+	margin-left: 10%;
+	margin-right: 10%;
+	margin-top: 2%;
 	display: flex;
-	flex-direction: column;
-	height: 100%;
-	width: 10%;
-	background-color: #1c2c2c;
+	border-radius: 0.5rem;
+	height: 5%;
+	background-color: var(--secondary-bg-color);
 }
 
 ul{
@@ -61,12 +67,33 @@ form{
 	flex-direction: column;
 }
 
+.form-group{
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	gap: 5px;
+}
+.form-group input, textarea {
+	width: 100%;
+}
+.form-group textarea{
+	flex-grow: 1;
+}
+
+fieldset{
+	border: 1px solid var(--accent2);
+}
+legend{
+	color: var(--main-text-color);
+}
+
 /* General */
 .main-content{
 	display: flex;
 	flex-grow: 1;
 	flex-direction: column;
 	height: 100%;
+	width: 100%;
 	padding: 10px;
 }
 
@@ -76,8 +103,61 @@ form{
 	height: 100%;
 }
 
+.page-wrapper {
+	display: flex;
+	flex-direction: column;
+	height: 100%;
+	width: 80%;
+	align-self: center;
+}
+
 .flex-center {
 	display: flex;
 	align-items: center;
 	justify-content: center;
+}
+
+.text-box {
+	padding: var(--big-space);
+	background-color: var(--secondary-bg-color);
+	width: 70%;
+	border-radius: 0.5rem;
+	line-height: 2;
+}
+
+.fieldset-like{
+	border: 1px solid var(--accent2);
+	border-top: none;
+	margin: 32px 2px;
+	padding: 8px;
+}
+
+.fieldset-like h2 {
+	font-size: 16px normal;
+	line-height: 0.75;
+	margin: -16px -8px 0;
+	top: -10px;
+	/* padding: 0px 4px; */
+}
+
+.fieldset-like h2:before {
+	border-top: 1px solid var(--accent2);
+	content: ' ';
+	float: left;
+	margin: 8px 2px 0 -1px;
+	width: 12px;
+}
+.fieldset-like h2:after {
+	border-top: 1px solid var(--accent2);
+	content: ' ';
+	display: block;
+	height: 24px;
+	left: 2px;
+	margin: 0 1px 0 0;
+	overflow: hidden;
+	position: relative;
+	top: 8px;
+}
+.fieldset-like h2 span {
+	float: left;
 }
