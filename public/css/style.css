@@ -38,6 +38,9 @@ a:visited{
 h1{
 	color: var(--accent1);
 	margin: 0px;
+	width: 70%;
+	align-self: flex-start;
+	align-items: flex-start;
 }
 
 nav{
@@ -120,7 +123,7 @@ legend{
 .text-box {
 	padding: var(--big-space);
 	background-color: var(--secondary-bg-color);
-	width: 70%;
+	width: 80%;
 	border-radius: 0.5rem;
 	line-height: 2;
 }

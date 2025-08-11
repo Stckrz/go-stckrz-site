@@ -1,11 +1,7 @@
 /*  Index Page Stuff */
 
-.index-wrapper{
-	display: flex;
-	flex-direction: column;
-	height: 100%;
-	width: 80%;
-	align-self: center;
+.index-main-text{
+	align-self: flex-start;
 }
 
 /*  "Buttons" container */
@@ -30,6 +26,7 @@
 /*  Post Preview Block */
 .post-preview-container{
 	width: 50%;
+	align-self: center;
 }
 
 .post-preview{
