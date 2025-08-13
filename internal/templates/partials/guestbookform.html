@@ -1,28 +1,67 @@
 {{ define "guestbookform" }}
 <fieldset>
 	<legend>New Post</legend>
-	<form class="guestbook-form">
-		<div class="form-group">
-			<div>
-				<label for="name">Name: </label><br>
-				<input type="text" name="name" value="">
+	<form id="guestbookForm" class="guestbook-form" action="./guestbook">
+		<div class="guestbook-form-field-container">
+			<div class="form-group">
+				<div>
+					<label for="name">Name: </label><br>
+					<input type="text" name="name" required>
+				</div>
+				<div>
+					<label for="email">E-Mail:</label><br>
+					<input type="email" name="email">
+				</div>
+				<div>
+					<label for="website">Website:</label><br>
+					<input type="url" name="website" value="https://">
+				</div>
 			</div>
-			<div>
-				<label for="email">E-Mail:</label><br>
-				<input type="email" name="email" value="">
-			</div>
-			<div>
-				<label for="website">Website:</label><br>
-				<input type="url" name="website" value="">
+			<div class="form-group">
+				<div>
+					<label for="message">Message:</label><br>
+					<textarea rows="5" cols="5" name="message" required></textarea>
+				</div>
 			</div>
 		</div>
-		<div class="form-group">
-			<div>
-				<label for="message">Message:</label><br>
-				<textarea rows="5" cols="5" name="message" value=""></textarea>
-			</div>
-		</div>
+		<button type="submit" id="submitButton" class="guest-list-button">Submit</button>
 	</form>
-		<button>Submit</button>
+	<div class="error-text"></div>
 </fieldset>
+<script>
+	const form = document.getElementById("guestbookForm");
+	const errorTextString = document.querySelector(".error-text");
+
+	form.addEventListener("submit", async(e) => {
+		e.preventDefault();
+		//reset error text on new submission
+		errorTextString.textContent = ""
+
+		const formData = {
+			name: form.name.value,
+			email: form.email.value,
+			website: form.website.value,
+			message: form.message.value,
+		};
+
+		try{
+			const res = await fetch("http://127.0.0.1:8080/guestbooks", {
+				method: "POST",
+				headers: {"Content-Type": "application/json"},
+				body: JSON.stringify(formData)
+			});
+
+			if(!res.ok) {
+				//Just stating request failed.. don't really want to give away information
+				errorTextString.textContent = "Request failed" 
+				return;
+			}
+			const data = await res.json();
+			window.location.href = "/guestbook"; //on success, refresh the page
+		} catch (err){
+			errorTextString.textContent = "Request failed" 
+		}
+	})
+</script>	
 {{ end }}
+

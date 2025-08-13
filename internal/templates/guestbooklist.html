@@ -1,6 +1,24 @@
 {{ define "content" }}
 <div class="page-wrapper">
 	{{ template "guestbookform" . }}
-	buttholes
+	<ul class="guestbook-entry-list">
+		{{ range .PageNumbers }}
+		<a href="./guestbook?page={{ . }}">{{ . }}</a>
+		{{ end }}
+		{{ range .Guestbooks }}
+		<div class="guestbook-entry">
+			<table class="guestbook-info">
+				<tr><td>Number:</td><td>{{ .ID }}</td></tr>
+				<tr><td>Name:</td><td>{{ .Name }}</td></tr>
+				<tr><td>Date:</td><td>{{ .CreatedAt.Format "Jan 02, 2006" }}</td></tr>
+				<tr><td>Email:</td><td>{{ .Email }}</td></tr>
+				<tr><td>Web:</td><td>{{ .Website }}</td></tr>
+			</table>
+			<p class="guestbook-message">{{ .Message }}</p>
+		</div>
+		{{ else }}
+			<li>No blog posts found..</li>
+		{{ end }}
+	</ul>
 </div>
 {{ end }}

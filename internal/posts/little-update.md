@@ -2,7 +2,7 @@
 title:  "Dev Update"
 date:   "2025-08-08"
 slug:   "dev-update"
-tag:    "regular-posts"
+tag:    "dev-log"
 summary: "Some thoughts about early development and deployment"
 ---
 

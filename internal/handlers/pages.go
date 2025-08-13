@@ -56,3 +56,6 @@ func (h *PageHandler) About(w http.ResponseWriter, r *http.Request) {
 func (h *PageHandler) FAQ(w http.ResponseWriter, r *http.Request) {
 	h.renderTemplate(w, "faq", map[string]string{"Title": "Faq"})
 }
+func (h *PageHandler) Resources(w http.ResponseWriter, r *http.Request) {
+	h.renderTemplate(w, "resources", map[string]string{"Title": "Resources"})
+}

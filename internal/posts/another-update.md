@@ -1,8 +1,8 @@
 ---
 title:  "Another Dev Update"
-date:   "2025-09-08"
+date:   "2025-08-08"
 slug:   "another-dev-update"
-tag:    "regular-posts"
+tag:    "dev-log"
 summary: "Continued development for the site"
 ---
 
