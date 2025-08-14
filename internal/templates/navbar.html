@@ -1,22 +1,58 @@
 {{ define "navbar" }}
-<nav>
-	<a class="nav-link" href="/">Home</a>
-	<a class="nav-link" href="/posts">Posts</a>
-	<a class="nav-link" href="/about">About</a>
-	<a class="nav-link" href="/resources">Resources</a>
-	<a class="nav-link" href="https://stckrz.com/portfolio">Portfolio</a>
-	<a class="nav-link" href="/faq">Faq</a>
-	<a class="nav-link" href="/guestbook">Guest Book</a>
-</nav>
-		<ul class="socials-list">
-			<li>
-				<a href="https://github.com/Stckrz">Github</a>
-			</li>
-			<li>
-				<a href="https://www.linkedin.com/in/madison-sage-5a45692b7">Linkedin</a>
-			</li>
-			<li>
-				<a href="mailto:mail@stckrz.com">Email</a>
-			</li>
-		</ul>
+<div class="navbar-wrapper">
+	<nav>
+		<div class="nav-link-container">
+			<a class="nav-link" href="/">Home</a>
+			<a class="nav-link" href="/posts">Posts</a>
+			<a class="nav-link" href="/about">About</a>
+			<a class="nav-link" href="/resources">Resources</a>
+			<a class="nav-link" href="https://stckrz.com/portfolio">Portfolio</a>
+			<a class="nav-link" href="/faq">Faq</a>
+			<a class="nav-link" href="/guestbook">Guestbook</a>
+		</div>
+		<div class=flex-center>Open Dyslexic:
+			<label class="switch">
+				<input class="font-toggle-switch" id="fontToggle" type="checkbox" name="" value="">
+				<span class="slider round"></span>
+			</label>
+		</div>
+	</nav>
+	<ul class="socials-list">
+		<li>
+			<a href="https://github.com/Stckrz">
+				<img class="logo-link" src="/static/images/logos/github.png" alt="poorly drawn github icon" />
+			</a>
+		</li>
+		<li>
+			<a href="https://www.linkedin.com/in/madison-sage-5a45692b7">
+				<img class="logo-link" src="/static/images/logos/linkedin.png" alt="poorly drawn linkedin icon"/>
+			</a>
+		</li>
+		<li>
+			<a href="mailto:mail@stckrz.com">
+				<img class="logo-link" src="/static/images/logos/mail.png" alt="poorly drawn mail icon"/>
+			</a>
+		</li>
+	</ul>
+</div>
+<script defer>
+	(function () {
+		const root = document.documentElement;
+		const input = document.getElementById("fontToggle");
+		if (!input) return;
+
+		const isOn = root.classList.contains('font-dyslexic');
+		input.checked = isOn;
+
+
+		input.addEventListener('change', function () {
+			const on = input.checked;
+			root.classList.toggle('font-dyslexic', on);
+			try {
+				localStorage.setItem('font-choice', on ? 'dyslexic' : 'base');
+			} catch (_) { }
+		})
+	})();
+
+</script>
 {{ end }}

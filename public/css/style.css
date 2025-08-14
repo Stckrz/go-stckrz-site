@@ -2,26 +2,31 @@
 @import url("index.css");
 @import url("variables.css");
 @import url("guestbook.css");
+@import url("navbar.css");
 
 /* make padding & border count _inside_ width/height */
-*, *::before, *::after {
-  box-sizing: border-box;
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
 }
 
-html, body{
+html,
+body {
 	display: flex;
 	flex-direction: column;
 	height: 100vh;
 	width: 100vw;
 	margin: 0;
+	font-family: var(--font-body);
 }
 
-main{
+main {
 	width: 100%;
 	height: 100%;
 }
 
-html{
+html {
 	background-color: var(--main-bg-color);
 	color: var(--main-text-color);
 	height: 100%;
@@ -31,11 +36,11 @@ a {
 	color: var(--accent2)
 }
 
-a:visited{
+a:visited {
 	color: var(--accent2);
 }
 
-h1{
+h1 {
 	color: var(--accent1);
 	margin: 0px;
 	width: 70%;
@@ -43,55 +48,41 @@ h1{
 	align-items: flex-start;
 }
 
-nav{
-	margin-left: 10%;
-	margin-right: 10%;
-	margin-top: 2%;
-	display: flex;
-	border-radius: 0.5rem;
-	height: 5%;
-	background-color: var(--secondary-bg-color);
-}
-
-ul{
+ul {
 	list-style: none;
 }
 
-.nav-link{
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	padding: var(--big-space);
-	text-decoration: none;
-}
-
-form{
+form {
 	display: flex;
 	flex-direction: column;
 }
 
-.form-group{
+.form-group {
 	width: 100%;
 	display: flex;
 	flex-direction: column;
 	gap: 5px;
 }
-.form-group input, textarea {
+
+.form-group input,
+textarea {
 	width: 100%;
 }
-.form-group textarea{
+
+.form-group textarea {
 	flex-grow: 1;
 }
 
-fieldset{
+fieldset {
 	border: 1px solid var(--accent2);
 }
-legend{
+
+legend {
 	color: var(--main-text-color);
 }
 
 /* General */
-.main-content{
+.main-content {
 	display: flex;
 	flex-grow: 1;
 	flex-direction: column;
@@ -101,7 +92,7 @@ legend{
 }
 
 /* Generic Classes*/
-.full-size{
+.full-size {
 	width: 100%;
 	height: 100%;
 }
@@ -128,7 +119,7 @@ legend{
 	line-height: 2;
 }
 
-.fieldset-like{
+.fieldset-like {
 	border: 1px solid var(--accent2);
 	border-top: none;
 	margin: 32px 2px;
@@ -150,6 +141,7 @@ legend{
 	margin: 8px 2px 0 -1px;
 	width: 12px;
 }
+
 .fieldset-like h2:after {
 	border-top: 1px solid var(--accent2);
 	content: ' ';
@@ -161,6 +153,8 @@ legend{
 	position: relative;
 	top: 8px;
 }
+
 .fieldset-like h2 span {
 	float: left;
 }
+

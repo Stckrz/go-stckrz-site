@@ -1,19 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8">
-		<title>{{ .Title }}</title>
-		<link rel="stylesheet" href="/static/css/style.css?v=123">
-	</head>
-	<body>
-			{{ template "navbar" . }}
-		
-		<main>
-			<div class="main-content">
-				{{ template "content" . }}
-			</div>
-		</main>		
-	</body>
-	
-</html>
 
+<head>
+	<script>
+		(function () {
+			//This reads from localstorage and adds classList dyslexic, if dyslexic option is enabled.
+			try {
+				const fontChoice = localStorage.getItem('font-choice')
+				if (fontChoice === 'dyslexic') document.documentElement.classList.add('font-dyslexic')
+			} catch (_) { }
+		})();
+	</script>
+	<meta charset="UTF-8">
+	<title>{{ .Title }}</title>
+
+	<link rel="stylesheet" href="/static/css/style.css?v=123">
+</head>
+
+<body>
+	<div class="main-logo-container">
+		<img class="main-logo" src="/static/images/logos/logo.png" alt="Bubble letters spelling out the letters S T C K R Z"/>
+	</div>
+	{{ template "navbar" . }}
+
+	<main>
+		<div class="main-content">
+			{{ template "content" . }}
+		</div>
+	</main>
+</body>
+
+</html>

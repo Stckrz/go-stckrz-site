@@ -1,10 +1,45 @@
-:root{
+@font-face {
+  font-family: "OpenDyslexic";
+  src: url("/static/fonts/OpenDyslexic-Regular.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "OpenDyslexic";
+  src: url("/static/fonts/OpenDyslexic-Italic.woff2") format("woff2");
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: "OpenDyslexic";
+  src: url("/static/fonts/OpenDyslexic-Bold.woff2") format("woff2");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "OpenDyslexic";
+  src: url("/static/fonts/OpenDyslexic-BoldItalic.woff2") format("woff2");
+  font-weight: 700;
+  font-style: italic;
+  font-display: swap;
+}
+
+:root {
+	--font-body: system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
 	--main-bg-color: #1c1c1c;
 	--secondary-bg-color: #1c2c2c;
 	--main-text-color: #f5e8d8;
 	--accent1: #FF6F61;
 	--accent2: #DAA520;
+	--accent3: #CBA54a;
 	--hover: #FF4500;
 	--small-space: 5px;
 	--big-space: 10px;
+
+}
+.font-dyslexic {
+  --font-body: "OpenDyslexic", system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
 }
