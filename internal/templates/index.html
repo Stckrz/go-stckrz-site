@@ -9,7 +9,10 @@
 			One of my favorite things about this, and about the indie web in general, is that I do not have to adhere to strict "modern web ux standards". I want to focus on stuff like accessibility and a little bit of creativity, without all of the animations, content jumping around, javascript-enabled-only, and other modern problems..
 		</p>
 	</div>
-	{{ template "postpreview" . }}
+	<div class="flex-between page-sized-content">
+		{{ template "postpreview" . }}
+		{{ template "fidgetslider" .}}
+	</div>
 	<div class="button-container">
 		<a href="https://iframe.chat/"><img src="https://iframe.chat/chattable-alt.gif" title="Add a stream chat to your website free with Chattable" alt="Chattable" /></a>
 	<!--strawbebby's button 88x31--><a href='https://strawbebby228.neocities.org/' target='_blank'><img src='https://strawbebby228.neocities.org/arts/UI/ButtonPink.gif'></a>

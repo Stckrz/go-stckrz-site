@@ -1,0 +1,76 @@
+
+.fidget-wrapper{
+	display: flex;
+	align-self: center;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+}
+.fidget-slider-container{
+	align-self: center;
+	height: 150px;
+	width: 150px;
+	border: 1px solid var(--accent2);
+}
+
+.fidget-body{
+	height: 100%;
+	width: 100%;
+	display: grid;
+	position: relative;
+	grid-template-rows: repeat(3, 1fr);
+	grid-template-columns: repeat(3, 1fr);
+}
+
+.fidget-body-img{
+	position: absolute;
+	object-fit: cover;
+	height: 100%;
+	width: 100%;
+}
+
+.slider-ball{
+	position: absolute;
+	object-fit: cover;
+	height: 85%;
+	width: 85%;
+}
+
+.box{
+	display: flex;
+}
+
+.fidget-slider{
+	position: absolute;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height: 50px;
+	width: 50px;
+	transition: top 0.25s ease, left 0.25s ease;
+}
+
+.fidget-position-top{
+	top: 1px;
+	left: 48px
+}
+
+.fidget-position-right{
+	top: 48px;
+	left: 100px;
+}
+
+.fidget-position-left{
+	top: 49px;
+	left: 0px;
+}
+
+.fidget-position-bottom{
+	top: 97px;
+	left: 48px;
+}
+
+.fidget-position-center{
+	top: 50px;
+	left: 50px;
+}

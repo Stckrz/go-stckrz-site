@@ -1,6 +1,6 @@
 /*  Index Page Stuff */
 
-.index-main-text{
+.index-main-text {
 	align-self: flex-start;
 }
 
@@ -12,41 +12,13 @@
 	gap: 5px;
 }
 
-/*Social Media Links*/
-.socials-list{
-	display: flex;
-	justify-content: flex-end;
-	margin-left: 10%;
-	margin-right: 10%;
-	margin-top: 0px;
-	height: 40%;
-}
-
-.socials-list li{
-	display: flex;
-	margin: 0px;
-	padding: 0px;
-	height: 100%;
-}
-
-.logo-link{
-	height: 95%;
-	width: 95%;
-	aspect-ratio: 1/1;
-}
-
-.logo-link:hover{
-	height: 100%;
-	aspect-ratio: 1/1;
-}
-
 /*  Post Preview Block */
-.post-preview-container{
+.post-preview-container {
 	width: 50%;
 	align-self: center;
 }
 
-.post-preview{
+.post-preview {
 	text-decoration: none;
 	list-style: none;
 	display: flex;
@@ -55,11 +27,11 @@
 	gap: 10px;
 }
 
-.post-preview p{
+.post-preview p {
 	margin: 2px;
 }
 
-.main-logo-container{
+.main-logo-container {
 	display: flex;
 	align-items: flex-end;
 	height: 10%;
@@ -68,7 +40,17 @@
 	padding: 0
 }
 
-.main-logo{
+.main-logo {
 	object-fit: cover;
 	height: 100%;
+}
+
+@media only screen and (max-width: 800px) {
+	.main-logo-container {
+		justify-content: center;
+	}
+
+	.post-preview-container {
+		width: 100%;
+	}
 }

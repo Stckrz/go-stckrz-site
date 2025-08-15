@@ -1,0 +1,50 @@
+{{ define "fidgetslider" }}
+<div class="fidget-wrapper">
+	<div>Fidget slider:</div>
+	<div class="fidget-slider-container">
+		<div class="fidget-body">
+			<img class="fidget-body-img" src="static/images/sliderboard.png" />
+			<div class="box"></div>
+			<div class="box"></div>
+			<div class="box"></div>
+			<div class="box"></div>
+			<div class="box"></div>
+			<div class="box"></div>
+			<div class="box"></div>
+			<div class="box"></div>
+			<div class="box"></div>
+			<div class="fidget-slider">
+				<img class="slider-ball" src="/static/images/slider.png" alt="a gray ball with a black outline">
+			</div>
+		</div>
+	</div>click the button to play
+</div>
+<script>
+	const fidgetSlider = document.querySelector(".fidget-slider");
+	const positionArray = ["top", "right", "left", "bottom", "center"];
+	let lastPosition = "top";
+	let nextPosition = "right";
+	fidgetSlider.classList.add(`fidget-position-center`);
+
+	function getNextPosition() {
+		const tempArray = positionArray.filter(position => position !== lastPosition);
+		nextPosition = tempArray[Math.floor(Math.random() * (tempArray.length - 1))];
+	}
+
+	function moveSlider(newPosition) {
+		for (let i = 0; i < positionArray.length; i++) {
+			fidgetSlider.classList.remove(`fidget-position-${positionArray[i]}`);
+		}
+		fidgetSlider.classList.add(`fidget-position-${newPosition}`);
+	}
+	fidgetSlider.addEventListener("click", () => {
+		moveSlider("center");
+		setTimeout(() => {
+			moveSlider(nextPosition);
+		}, "250")
+		lastPosition = nextPosition;
+		getNextPosition();
+	});
+
+</script>
+{{ end }}

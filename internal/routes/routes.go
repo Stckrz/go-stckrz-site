@@ -32,4 +32,5 @@ func LoadPageRoutes(router chi.Router, posts []handlers.Post, categories []strin
 	router.Get("/guestbookform", pageHandler.GuestbookForm)
 	router.Get("/postcategorylist", pageHandler.CategoryList)
 	router.Get("/posts/{slug}", pageHandler.ViewPost)
+	router.Get("/fidgetslider", pageHandler.FidgetSlider)
 }

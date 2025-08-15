@@ -20,6 +20,7 @@ func (h *PageHandler) renderTemplate(w http.ResponseWriter, tmpl string, data an
 		"internal/templates/partials/postpreview.html",
 		"internal/templates/partials/postcategorylist.html",
 		"internal/templates/partials/guestbookform.html",
+		"internal/templates/partials/fidgetslider.html",
 		filepath.Join("internal/templates", tmpl+".html"),
 	)
 
@@ -58,4 +59,7 @@ func (h *PageHandler) FAQ(w http.ResponseWriter, r *http.Request) {
 }
 func (h *PageHandler) Resources(w http.ResponseWriter, r *http.Request) {
 	h.renderTemplate(w, "resources", map[string]string{"Title": "Resources"})
+}
+func (h *PageHandler) FidgetSlider(w http.ResponseWriter, r *http.Request) {
+	h.renderTemplate(w, "fidgetslider", map[string]string{"Title": "Fidget Slider"})
 }

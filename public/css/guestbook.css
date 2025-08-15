@@ -66,3 +66,11 @@
 .error-text{
 	color: var(--accent1);
 }
+
+@media only screen and (max-width: 800px) {
+	.guestbook-entry{
+		width: 100%;
+	}
+
+
+}

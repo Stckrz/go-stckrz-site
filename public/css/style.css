@@ -3,6 +3,7 @@
 @import url("variables.css");
 @import url("guestbook.css");
 @import url("navbar.css");
+@import url("fidgetslider.css");
 
 /* make padding & border count _inside_ width/height */
 *,
@@ -105,10 +106,21 @@ legend {
 	align-self: center;
 }
 
+.page-sized-content {
+	width: 80%;
+	display: flex;
+}
+
 .flex-center {
 	display: flex;
 	align-items: center;
 	justify-content: center;
+}
+
+.flex-between {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
 }
 
 .text-box {
@@ -158,3 +170,11 @@ legend {
 	float: left;
 }
 
+@media only screen and (max-width: 800px) {
+
+	.page-sized-content {
+		width: 80%;
+		display: flex;
+		flex-direction: column;
+	}
+}
