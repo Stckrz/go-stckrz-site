@@ -13,6 +13,8 @@ RUN CGO_ENABLED=0 GOOS=linux GOARCH=amd64 go build -o web ./cmd/web
 #runtime stage
 FROM gcr.io/distroless/base-debian12
 
+USER nonroot:nonroot
+
 WORKDIR /app
 
 COPY --from=build /src/web /app/web
