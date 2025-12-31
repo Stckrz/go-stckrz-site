@@ -1,11 +1,11 @@
 package handlers
 
 import (
+	"fmt"
 	"html/template"
 	"net/http"
 	"path/filepath"
 	"sort"
-
 )
 
 type PageHandler struct {
@@ -21,6 +21,7 @@ func (h *PageHandler) renderTemplate(w http.ResponseWriter, tmpl string, data an
 		"internal/templates/partials/postcategorylist.html",
 		"internal/templates/partials/guestbookform.html",
 		"internal/templates/partials/fidgetslider.html",
+		"internal/templates/partials/draggable.html",
 		filepath.Join("internal/templates", tmpl+".html"),
 	)
 
@@ -34,6 +35,7 @@ func (h *PageHandler) renderTemplate(w http.ResponseWriter, tmpl string, data an
 
 func (h *PageHandler) Index(w http.ResponseWriter, r *http.Request) {
 	posts := h.Posts
+	fmt.Println("hellooo")
 
 	//Logic to date the posts newest first
 	sort.Slice(posts, func(i, j int) bool {
@@ -62,4 +64,7 @@ func (h *PageHandler) Resources(w http.ResponseWriter, r *http.Request) {
 }
 func (h *PageHandler) FidgetSlider(w http.ResponseWriter, r *http.Request) {
 	h.renderTemplate(w, "fidgetslider", map[string]string{"Title": "Fidget Slider"})
+}
+func (h *PageHandler) Draggable(w http.ResponseWriter, r *http.Request) {
+	h.renderTemplate(w, "draggable", map[string]string{"Title": "Draggable Item"})
 }
