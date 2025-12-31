@@ -35,6 +35,6 @@ jobs:
         with:
           context: .
           push: true
-          tags: ghcr.io/stckrz/go-static-server:latest
+          tags: ghcr.io/stckrz/go-stckrz-site:latest
           platforms: linux/amd64,linux/arm64
 
